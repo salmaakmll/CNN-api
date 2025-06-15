@@ -1,7 +1,6 @@
 fastapi
 uvicorn
-pillow
+gunicorn
+tensorflow
 numpy
-tensorflow==2.17.1
-python-multipart
-gunicorn==23.0.0
+pillow
