@@ -13,7 +13,7 @@ model = tf.keras.models.load_model("cnn_sayur_model.h5")
 # Image Preprocessing
 def preprocess_image(image_bytes):
     img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
-    img = img.resize((128, 128))  # Sesuaikan dengan input model kamu
+    img = img.resize((128, 128))  
     img = np.array(img).astype(np.float32) / 255.0
     img = np.expand_dims(img, axis=0)
     return img
@@ -26,7 +26,7 @@ async def predict(file: UploadFile = File(...)):
 
     prediction = model.predict(input_data)
     predicted_index = int(np.argmax(prediction[0]))
-    predicted_label = ["bayam merah", "kale"][predicted_index]  # Ganti sesuai label kamu
+    predicted_label = ["bayam merah", "kale"][predicted_index] 
 
     return JSONResponse({
         "class_label": predicted_label,
