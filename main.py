@@ -32,3 +32,7 @@ async def predict(file: UploadFile = File(...)):
         "class_label": predicted_label,
         "probabilities": prediction[0].tolist()
     })
+
+@app.get("/")
+def home():
+    return{"status": "Server ready"}
