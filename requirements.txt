@@ -1,10 +1,5 @@
 fastapi
-tensorflow==2.18.0
 uvicorn
-firebase-admin
-numpy<2.0
 pillow
-tflite-runtime     
-python-multipart          
-
-
+numpy
+tensorflow==2.13.0
