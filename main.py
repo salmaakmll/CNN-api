@@ -26,7 +26,7 @@ async def predict(file: UploadFile = File(...)):
 
     prediction = model.predict(input_data)
     predicted_index = int(np.argmax(prediction[0]))
-    predicted_label = ["bayam merah", "kale"][predicted_index] 
+    predicted_label = ["Bayam Merah", "Kale"][predicted_index] 
 
     return JSONResponse({
         "class_label": predicted_label,
